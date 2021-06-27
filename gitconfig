@@ -1,0 +1,27 @@
+[user]
+	name = Daniel Omar Vergara Pérez
+	email = daniel.omar.vergara@gmail.com
+[alias]
+	co = checkout
+	cane = commit --amend --no-edit
+	ci = commit
+	cm =  commit -m
+	cmn = commit -n -m
+	st = status
+	br = branch
+	ff = merge --ff-only
+	h    = log --pretty=format:'%Creset%C(red bold)[%ad] %C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --abbrev-commit --date=short
+	ha   = log --pretty=format:'%Creset%C(red bold)[%ad] %C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --all --abbrev-commit --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	dt = difftool
+	last = log -1 HEAD
+	lo = log --oneline -n 10
+	pr = pull --rebase
+	rh = rebase -i HEAD~2
+	rv = remote -v
+[core]
+	attributesfile = /home/danvergara/.gitattributes
+	excludesfile = /home/danvergara/.gitignore
+[diff "rspec"]
+	xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"

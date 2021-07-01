@@ -111,17 +111,20 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[[ -s "/home/danvergara/.gvm/scripts/gvm" ]] && source "/home/danvergara/.gvm/scripts/gvm"
-
-# Dan config env variables
+# Go
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
+
+[[ -s "/home/danvergara/.gvm/scripts/gvm" ]] && source "/home/danvergara/.gvm/scripts/gvm"
+
+# pyenv
 export PATH="/home/danvergara/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-alias lzd='lazydocker'
+
+# poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # User specific environment
@@ -131,11 +134,11 @@ then
 fi
 export PATH
 
+export PATH="$PATH:$HOME/.local/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.rvm/gems/ruby-2.7.1/bin:$PATH"
-
-export PATH="$PATH:$HOME/.local/bin"
 
 # Git aliases
 alias gbr='git branch'
@@ -157,3 +160,17 @@ alias gd='git diff'
 # Docker aliases
 alias dis="docker images"
 alias pru="docker system prune --volumes"
+
+alias lzd='lazydocker'
+
+export EDITOR="/usr/bin/vim"
+
+eval "$(direnv hook zsh)"
+source /etc/profile.d/rvm.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+alias ll='colorls -lA --sd --gs --group-directories-first'
+alias ls='colorls --group-directories-first'
+
+ZSH_THEME=powerlevel10k/powerlevel10k

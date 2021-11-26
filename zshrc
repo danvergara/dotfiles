@@ -171,7 +171,7 @@ alias pru="docker system prune --volumes"
 
 alias lzd='lazydocker'
 
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
 
 eval "$(direnv hook zsh)"
 source /etc/profile.d/rvm.sh
@@ -182,3 +182,5 @@ alias ll='colorls -lA --sd --gs --group-directories-first'
 alias ls='colorls --group-directories-first'
 
 ZSH_THEME=powerlevel10k/powerlevel10k
+
+alias vim="nvim"

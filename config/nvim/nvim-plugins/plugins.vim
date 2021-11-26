@@ -14,4 +14,5 @@ Plug 'kien/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
+Plug 'dense-analysis/ale'
 call plug#end()

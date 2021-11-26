@@ -1,0 +1,6 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["py", "yaml", "json"],
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "python.jediPath": "/home/danvergara/.local/lib/python3.9/site-packages"
+}

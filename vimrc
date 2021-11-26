@@ -9,9 +9,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
@@ -22,10 +19,6 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'dense-analysis/ale'
 Plugin 'joshdick/onedark.vim'
 Plugin 'preservim/nerdcommenter'
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'adoy/vim-php-refactoring-toolbox'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'uarun/vim-protobuf'
 Plugin 'preservim/nerdtree'
 Plugin 'elzr/vim-json'
@@ -37,13 +30,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
-Plug 'StanAngeloff/php.vim'
 Plug 'ncm2/ncm2'
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'roxma/nvim-yarp'
-Plug 'phpactor/ncm2-phpactor'
 Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 call plug#end()
 
@@ -64,9 +53,6 @@ set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
-
-" See docstrings for folded code
-let g:SimpylFold_docstring_preview=1
 
 " Python identation
 au BufNewFile,BufRead *.py
@@ -104,15 +90,6 @@ set encoding=utf-8
 
 " Turn on line numbers
 set nu
-
-" vim-powerline config
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set t_Co=256
 
 " ctrlp config
 let g:ctrlp_show_hidden = 1
@@ -174,12 +151,6 @@ nnoremap <leader>a :cclose<CR>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
-" vim-flake8 config
-autocmd BufWritePost *.py call flake8#Flake8()
-let g:flake8_show_quickfix=0
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1
-
 " Virtualenv support
 py3 << EOF
 import os
@@ -192,11 +163,9 @@ EOF
 
 " Ale linters
 let g:ale_linters = {
-      \   'python': ['flake8', 'pylint'],
       \   'ruby': ['standardrb', 'rubocop'],
       \   'javascript': ['eslint'],
       \   'vue': ['eslint'],
-      \   'php': ['php', 'langserver', 'phan'],
       \   'elixir': ['mix_format'],
       \}
 let g:ale_fixers = {'vue': ['remove_trailing_lines', 'trim_whitespace']}
@@ -205,9 +174,8 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 let g:ale_fix_on_save = 1
 
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_php_langserver_executable = expand('~/.config/composer/vendor/bin/php-language-server.php')
 
-" Shows the total number of warnings and errors in the status line. 
+" Shows the total number of warnings and errors in the status line.
 function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -249,7 +217,8 @@ autocmd VimEnter * command! -nargs=* Rg
 " map a specific key or shortcut to open NERDTree?
 map <C-b> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
+" nerd tree settings
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Terraform
 let g:terraform_align=1

@@ -23,7 +23,7 @@
 [core]
 	attributesfile = /home/danvergara/.gitattributes
 	excludesfile = /home/danvergara/.gitignore
-	editor = vim
+	editor = nvim
 [diff "rspec"]
 	xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
 [pull]

@@ -23,6 +23,7 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_sameids = 0
 
 " For syntax highlighting, use these options:
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'staticcheck']
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1

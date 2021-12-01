@@ -15,7 +15,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
 Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
 Plug 'neomake/neomake'
+Plug 'davidhalter/jedi-vim'
+Plug 'SirVer/ultisnips'
 call plug#end()

@@ -12,6 +12,7 @@ let g:config_file_list = ['/nvim-plugins/plugins.vim',
     \ '/plug-config/nerdtree.vim',
     \ '/plug-config/terraform.vim',
     \ '/plug-config/vim-go.vim',
+    \ '/plug-config/ultisnips.vim',
     \ ]
 
 for f in g:config_file_list

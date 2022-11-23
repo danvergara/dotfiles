@@ -16,6 +16,9 @@ Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
 Plug 'dense-analysis/ale'
 Plug 'neomake/neomake'
+Plug 'uarun/vim-protobuf'
+" Track the engine.
 Plug 'SirVer/ultisnips'
-" Plug 'uarun/vim-protobuf'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 call plug#end()

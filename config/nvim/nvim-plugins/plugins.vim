@@ -16,6 +16,6 @@ Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
 Plug 'dense-analysis/ale'
 Plug 'neomake/neomake'
-Plug 'davidhalter/jedi-vim'
 Plug 'SirVer/ultisnips'
+" Plug 'uarun/vim-protobuf'
 call plug#end()

@@ -111,11 +111,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Go
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
 
 [[ -s "/home/danvergara/.gvm/scripts/gvm" ]] && source "/home/danvergara/.gvm/scripts/gvm"
 
@@ -184,3 +179,15 @@ alias ls='colorls --group-directories-first'
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 alias vim="nvim"
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

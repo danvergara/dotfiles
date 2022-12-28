@@ -1,2 +1,19 @@
 {
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "usePlaceholders": true
+            }
+        },
+        "golangci-lint-languageserver": {
+            "command": "golangci-lint-langserver",
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "command": ["golangci-lint", "run", "--out-format", "json"]
+            }
+        }
+    }
 }

@@ -14,9 +14,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
-Plug 'dense-analysis/ale'
-Plug 'neomake/neomake'
 Plug 'uarun/vim-protobuf'
+Plug 'dense-analysis/ale'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:

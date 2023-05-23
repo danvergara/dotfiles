@@ -1,5 +1,5 @@
 let g:ale_linters = {
-      \   'python': [],
+      \   'python': ['ruff'],
       \   'ruby': ['standardrb', 'rubocop'],
       \   'elixir': ['mix_format'],
       \}

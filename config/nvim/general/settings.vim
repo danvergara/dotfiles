@@ -16,8 +16,7 @@ set background=dark
 let mapleader=","
 
 " Turn on line numbers
-set number
-set nornu
+set relativenumber
 
 " Split navigation
 set splitbelow

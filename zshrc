@@ -78,7 +78,8 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git firewalld zsh-syntax-highlighting zsh-autosuggestions)
+# git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+plugins=(git firewalld zsh-syntax-highlighting zsh-autosuggestions git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -180,3 +181,6 @@ alias lzd='lazydocker'
 
 # vim
 alias vim="nvim"
+
+# mcfly
+eval "$(mcfly init zsh)"

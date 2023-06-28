@@ -9,7 +9,7 @@ set smartindent
 set encoding=utf8
 
 " colorscheme
-colorscheme onedark
+colorscheme kanagawa
 set background=dark
 
 " Define leader

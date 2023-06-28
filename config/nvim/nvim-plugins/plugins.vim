@@ -7,7 +7,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'fatih/vim-go'
-Plug 'joshdick/onedark.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'kien/ctrlp.vim'
@@ -16,6 +15,7 @@ Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform'
 Plug 'uarun/vim-protobuf'
 Plug 'dense-analysis/ale'
+Plug 'rebelot/kanagawa.nvim'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:

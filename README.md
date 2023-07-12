@@ -4,7 +4,7 @@
 
 Settings for:
 
-- vim editor
+- NvChad
 - git config
 - git aliases
 - global gitignore file

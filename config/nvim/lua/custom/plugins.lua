@@ -7,12 +7,11 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "black",
-        "pyright",
-        "mypy",
         "ruff",
-        "debugpy",
+        "pyright",
         "gopls",
+        "black",
+        "debugpy",
       },
     },
   },

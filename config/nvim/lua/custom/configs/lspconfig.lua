@@ -4,6 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
+-- This is moslty for autocomplete and autosugestiongs.
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -15,3 +16,9 @@ lspconfig.gopls.setup {
     usePlaceholders = true,
   },
 }
+
+lspconfig.pyright.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"python"},
+})

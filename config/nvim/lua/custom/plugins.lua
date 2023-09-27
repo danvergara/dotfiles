@@ -8,6 +8,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
+        "pyright",
+        "ruff",
+        "black",
       },
     },
   },
@@ -20,7 +23,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    ft = {"go", "python"},
     opts = function()
       return require "custom.configs.null-ls"
     end,

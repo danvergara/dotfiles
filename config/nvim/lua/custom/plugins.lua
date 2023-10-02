@@ -32,7 +32,7 @@ local plugins = {
     "olexsmir/gopher.nvim",
     ft = "go",
     config = function(_, opts)
-     require("gophers").setup(opts)
+     require("gopher").setup(opts)
     require("core.utils").load_mappings("gopher")
     end,
     build = function()

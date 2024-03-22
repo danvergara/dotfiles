@@ -11,6 +11,9 @@ local plugins = {
         "pyright",
         "ruff",
         "black",
+        "typescript-language-server",
+        "prettier",
+        "eslint-lsp",
       },
     },
   },
@@ -23,7 +26,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"go", "python"},
+    event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
     end,

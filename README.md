@@ -11,7 +11,7 @@ Run `stow <config file dir>` to create symlinks to the content of that config fi
 For instance, to create symlinks to the NvChad configuration files, run:
 
 ```
-$ stow nvim
+$ stow vim
 ```
 
 ## Settings for:

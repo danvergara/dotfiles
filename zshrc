@@ -138,9 +138,10 @@ export PATH
 
 export PATH="$PATH:$HOME/.local/bin"
 
-# colorls aliases.
-alias ll='colorls -lA --sd --gs --group-directories-first'
-alias ls='colorls --group-directories-first'
+# exa aliases.
+alias ls='exa -l -a --icons --header --git --sort Name'
+alias lr='exa -l --recurse --icons --sort Name'
+alias lt='exa -l --tree --icons --sort Name'
 
 # Go
 [[ -s "/home/danvergara/.gvm/scripts/gvm" ]] && source "/home/danvergara/.gvm/scripts/gvm"
@@ -155,6 +156,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export EDITOR="/usr/bin/nvim"
+
+# cni plugins
+export CNI_PATH=$HOME/.local/lib/cni
+
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
@@ -182,6 +187,11 @@ alias lzd='lazydocker'
 # vim
 alias vim="nvim"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # mcfly
 eval "$(mcfly init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+alias inv='nvim $(fzf -m --preview="bat --color=always {}")'

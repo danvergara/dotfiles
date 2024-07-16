@@ -20,6 +20,10 @@ M.gopher = {
       "<cmd> GoTagAdd yaml <CR>",
       "Add yaml struct tags"
     },
+    ["<leader>gsd"] = {
+      "<cmd> GoTagAdd db <CR>",
+      "Add db struct tags"
+    },
   }
 }
 

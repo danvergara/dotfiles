@@ -9,12 +9,12 @@ local opts = {
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.golines,
     -- Python
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.ruff,
+    -- null_ls.builtins.formatting.black,
+    null_ls.builtins.diagnostics.ruff,
     -- JS/TS
     null_ls.builtins.diagnostics.eslint,
     -- null_ls.builtins.formatting.prettier,
-  },
+    },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({

@@ -16,4 +16,7 @@ map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Add json struct ta
 map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct tags" })
 map("n", "<leader>gsd", "<cmd> GoTagAdd db <CR>", { desc = "Add db struct tags" })
 
+-- undotree
+map("n", "<leader><F5>", "<cmd> UndotreeToggle <CR>")
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

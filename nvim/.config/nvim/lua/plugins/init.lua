@@ -6,7 +6,7 @@ return {
       require "configs.conform"
     end,
   },
-{
+  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
@@ -26,9 +26,9 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
+    config = function()
       require "configs.lspconfig"
-    end
+    end,
   },
   {
     "nvimtools/none-ls.nvim",
@@ -44,7 +44,7 @@ return {
     "olexsmir/gopher.nvim",
     ft = "go",
     config = function(_, opts)
-     require("gopher").setup(opts)
+      require("gopher").setup(opts)
     end,
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
@@ -60,25 +60,25 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
     lazy = false,
     config = function()
-      require("render-markdown").setup({
-          file_types = { 'markdown', 'vimwiki' },
-      })
+      require("render-markdown").setup {
+        file_types = { "markdown", "vimwiki" },
+      }
     end,
   },
   {
-    'goolord/alpha-nvim',
+    "goolord/alpha-nvim",
     lazy = false,
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
-    config = function ()
-      require('gitsigns').setup {
+    config = function()
+      require("gitsigns").setup {
         on_attach = function(bufnr)
-          local gitsigns = require('gitsigns')
+          local gitsigns = require "gitsigns"
 
           local function map(mode, l, r, opts)
             opts = opts or {}
@@ -86,15 +86,42 @@ return {
             vim.keymap.set(mode, l, r, opts)
           end
 
-          map('n', '<leader>ph', gitsigns.preview_hunk)
-          map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
-        end
+          -- Navigation
+          map("n", "]c", function()
+            if vim.wo.diff then
+              vim.cmd.normal { "]c", bang = true }
+            else
+              gitsigns.nav_hunk "next"
+            end
+          end)
+
+          map("n", "[c", function()
+            if vim.wo.diff then
+              vim.cmd.normal { "[c", bang = true }
+            else
+              gitsigns.nav_hunk "prev"
+            end
+          end)
+
+          map("n", "<leader>ph", gitsigns.preview_hunk)
+          map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+          map("n", "<leader>rh", gitsigns.reset_hunk)
+        end,
       }
-    end
+    end,
   },
   {
     "tpope/vim-fugitive",
     lazy = false,
+  },
+  {
+    "maxandron/goplements.nvim",
+    ft = "go",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
   -- These are some examples, uncomment them if you want to see them work!
   -- {

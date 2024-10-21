@@ -195,3 +195,9 @@ eval "$(mcfly init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
+
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# kubectl
+alias k=kubectl

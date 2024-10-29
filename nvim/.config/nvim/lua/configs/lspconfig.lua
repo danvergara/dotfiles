@@ -39,3 +39,12 @@ lspconfig.gopls.setup {
     },
   },
 }
+
+local tf_capb = vim.lsp.protocol.make_client_capabilities()
+tf_capb.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.terraformls.setup({
+  on_attach = on_attach,
+  flags = { debounce_text_changes = 150 },
+  capabilities = tf_capb,
+})

@@ -15,6 +15,7 @@ return {
     opts = {
       ensure_installed = {
         "gopls",
+        "pylint",
         "pyright",
         "ruff",
         "black",

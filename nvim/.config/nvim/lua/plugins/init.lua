@@ -14,6 +14,9 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "clangd",
+        "clang-format",
+        "codelldb",
         "gopls",
         "pylint",
         "pyright",
@@ -159,7 +162,7 @@ return {
     },
   },
   {
-    "hashicorp/terraform-ls"
+    "hashicorp/terraform-ls",
   },
   -- These are some examples, uncomment them if you want to see them work!
   -- {

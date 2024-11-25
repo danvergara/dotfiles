@@ -21,6 +21,8 @@ local opts = {
     null_ls.builtins.formatting.stylua,
     -- Protocol Buffer
     null_ls.builtins.diagnostics.buf,
+    -- CPP
+    null_ls.builtins.formatting.clang_format,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

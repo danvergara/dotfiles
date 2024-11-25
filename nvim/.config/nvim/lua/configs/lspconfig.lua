@@ -24,6 +24,14 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
 }
 
+lspconfig.clangd.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelperProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
 -- This is moslty for autocomplete and autosugestiongs.
 lspconfig.gopls.setup {
   on_attach = on_attach,

@@ -15,7 +15,6 @@ local opts = {
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
     null_ls.builtins.diagnostics.mypy,
-    null_ls.builtins.diagnostics.pylint,
     -- Lua
     null_ls.builtins.diagnostics.selene,
     null_ls.builtins.formatting.stylua,

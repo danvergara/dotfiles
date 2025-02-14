@@ -57,7 +57,6 @@ lspconfig.terraformls.setup {
   capabilities = tf_capb,
 }
 
-local lspconfig = require "lspconfig"
 lspconfig.pyright.setup {
   capabilities = capabilities,
   settings = {
@@ -75,3 +74,13 @@ lspconfig.pyright.setup {
 }
 
 lspconfig.ruff.setup {}
+
+lspconfig.helm_ls.setup {
+  settings = {
+    ["helm-ls"] = {
+      yamlls = {
+        path = "yaml-language-server",
+      },
+    },
+  },
+}

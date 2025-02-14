@@ -2,6 +2,7 @@ require "nvchad.mappings"
 
 -- add yours here
 local map = vim.keymap.set
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
@@ -39,8 +40,35 @@ map("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" })
 -- undotree
 map("n", "<leader>ut", "<cmd> UndotreeToggle <CR>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-
 -- Dap
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })
-map("n", "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Start or continue the debugger" })
+map("n", "<leader>dc", "<cmd> DapContinue <CR>", { desc = "Start or continue the debugger" })
+map("n", "<leader>de", "<cmd> DapTerminate <CR>", { desc = "Start or continue the debugger" })
+map("n", "<leader>dr", "<cmd> DapTerminate <CR>", { desc = "Start or continue the debugger" })
+map("n", "<leader>dl", "<cmd> DapStepInto <CR>", { desc = "Step into the current expression" })
+map("n", "<leader>dj", "<cmd> DapStepOver <CR>", { desc = "Step over the current line" })
+map("n", "<leader>dk", "<cmd> DapStepOut <CR>", { desc = "Step out of the current scope" })
+
+-- Dap UI
+map("n", "<leader>dus", function()
+  local widgets = require "dap.ui.widgets"
+  local sidebar = widgets.sidebar(widgets.scopes)
+  sidebar.open()
+end, { desc = "Open debugging sidebar" })
+
+-- dap-go
+map("n", "<leader>dgt", function()
+  require("dap-go").debug_test()
+end, { desc = "Debug go test" })
+
+map("n", "<leader>dgl", function()
+  require("dap-go").debug_last()
+end, { desc = "Debug last go test" })
+
+-- Crates
+map("n", "<leader>rcu", function()
+  require("crates").upgrade_all_crates()
+end, { desc = "Update crates" })
+
+-- rustaceanvim
+map("n", "<leader>dlt", "<cmd> lua vim.cmd('RustLsp testables') <CR>", { desc = "Debugger testables" })

@@ -10,6 +10,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "json",
+  callback = function()
+    vim.opt_local.fixeol = false
+  end,
+})
 
 local lazy_config = require "configs.lazy"
 

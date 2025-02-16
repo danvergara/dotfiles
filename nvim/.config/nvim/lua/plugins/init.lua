@@ -231,6 +231,25 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^5", -- Recommended
     lazy = false, -- This plugin is already lazy
+    config = function()
+      vim.g.rustaceanvim = {
+        server = {
+          on_attach = function(client, bufnr)
+            -- Keybindings for LSP features
+            local opts = { buffer = bufnr, silent = true }
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+            vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+          end,
+          settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = { command = "clippy" },
+            },
+          },
+        },
+      }
+    end,
     ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,

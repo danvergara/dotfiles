@@ -46,7 +46,7 @@ return {
     ft = "go",
     dependencies = "mfussenegger/nvim-dap",
     config = function(_, opts)
-      require("dag-go").setup(opts)
+      require("dap-go").setup(opts)
     end,
   },
   {

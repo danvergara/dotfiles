@@ -60,6 +60,7 @@ lspconfig.terraformls.setup {
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  on_init = on_init,
   settings = {
     pyright = {
       -- Using Ruff's import organizer

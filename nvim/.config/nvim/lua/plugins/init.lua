@@ -42,6 +42,9 @@ return {
     "mfussenegger/nvim-dap",
   },
   {
+    "yriveiro/dap-go.nvim",
+  },
+  {
     "leoluz/nvim-dap-go",
     ft = "go",
     dependencies = "mfussenegger/nvim-dap",
@@ -75,7 +78,6 @@ return {
         "typescript-language-server",
         "prettier",
         "eslint-lsp",
-        "helm-ls",
         "rust-analyzer",
         "stylua",
       },
@@ -219,6 +221,7 @@ return {
   },
   {
     "towolf/vim-helm",
+    ft = {"helm"}, -- Load only for Helm filetypes
   },
   {
     "rust-lang/rust.vim",

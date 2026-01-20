@@ -32,6 +32,13 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+lspconfig.zls.setup {
+  cmd = { "zls" },
+  filetypes = { "zig", "zir" },
+  root_dir = lspconfig.util.root_pattern("build.zig", ".git") or vim.loop.cwd,
+  single_file_support = true,
+}
+
 -- This is moslty for autocomplete and autosugestiongs.
 lspconfig.gopls.setup {
   on_attach = on_attach,

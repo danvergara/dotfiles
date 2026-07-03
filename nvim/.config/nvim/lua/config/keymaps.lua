@@ -74,7 +74,12 @@ map("n", "<A-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" }
 
 -- Clear search highlighting
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
-map("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", { desc = "Redraw / Clear hlsearch / Diff Update" })
+map(
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
+)
 
 -- Smart search navigation (n always goes forward, N always backward)
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
@@ -154,8 +159,50 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 -- ═══════════════════════════════════════════════════════════
 
 -- Cycle through open buffers (Tabs)
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', { silent = true, desc = 'Next buffer' })
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true, desc = 'Previous buffer' })
+map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer" })
+map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer" })
 
 -- Close the current buffer
-vim.keymap.set('n', '<leader>x', '<Cmd>bdelete<CR>', { silent = true, desc = 'Close buffer' })
+map("n", "<leader>x", "<Cmd>bdelete<CR>", { silent = true, desc = "Close buffer" })
+
+-- ═══════════════════════════════════════════════════════════
+-- FORMATTING (conform.nvim)
+-- ═══════════════════════════════════════════════════════════
+
+map({ "n", "v" }, "<leader>fm", function()
+	require("conform").format({ lsp_format = "fallback" })
+end, { desc = "Format file or range" })
+
+-- ═══════════════════════════════════════════════════════════
+-- VIM-FUGITIVE
+-- ═══════════════════════════════════════════════════════════
+
+-- Trace who wrote a specific line of code
+map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
+-- Open the main interactive Git status window
+map("n", "<leader>gg", "<cmd>Git<CR>", { desc = "Git Status (Fugitive)" })
+-- View the commit history for the current file
+map("n", "<leader>gl", "<cmd>Git log<CR>", { desc = "Git log" })
+-- Open a split showing the changes in the current file
+map("n", "<leader>gD", "<cmd>Gdiffsplit<CR>", { desc = "Git Diff" })
+-- Push current branch (useful after committing in the Fugitive window)
+map("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push" })
+-- Open a new buffer to write your commit message.
+map("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
+-- Open the interactive Fugitive summary window (untacked, staged, and unstaged files).
+map("n", "<leader>gst", "<cmd>Git status<CR>", { desc = "Git status:" })
+
+-- ═══════════════════════════════════════════════════════════
+-- gopher.nvim
+-- ═══════════════════════════════════════════════════════════
+
+-- Add struct tags
+map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Add json struct tags" })
+map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct tags" })
+map("n", "<leader>gsd", "<cmd> GoTagAdd db <CR>", { desc = "Add db struct tags" })
+-- Remove struct tags
+map("n", "<leader>rsj", "<cmd> GoTagRm json <CR>", { desc = "Remove json struct tags" })
+map("n", "<leader>rsy", "<cmd> GoTagRm yaml <CR>", { desc = "Remove yaml struct tags" })
+map("n", "<leader>rsd", "<cmd> GoTagRm db <CR>", { desc = "Remove db struct tags" })
+-- Generate if err != nil { via iferr
+map("n", "<leader>er", "<cmd> GoIfErr <CR>", { desc = "Gemerate error if err != nil {" })

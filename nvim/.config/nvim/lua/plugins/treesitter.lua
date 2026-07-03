@@ -11,23 +11,23 @@ vim.pack.add({
 
 require("nvim-treesitter").setup({})
 require("nvim-treesitter").install({
-    -- Required by Neovim core
-    'lua',
-    'vim',
-    'vimdoc',
-    'query',
-    -- Backend / Systems Stack
-    'go',
-    'gomod',
-    'gosum',
-    'gowork',
-    'python',
-    'zig',
-    -- Standard data formats
-    'json',
-    'yaml',
-    'markdown',
-    'bash'
+	-- Required by Neovim core
+	"lua",
+	"vim",
+	"vimdoc",
+	"query",
+	-- Backend / Systems Stack
+	"go",
+	"gomod",
+	"gosum",
+	"gowork",
+	"python",
+	"zig",
+	-- Standard data formats
+	"json",
+	"yaml",
+	"markdown",
+	"bash",
 })
 
 require("nvim-treesitter-textobjects").setup({

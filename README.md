@@ -8,7 +8,7 @@ This repository uses [GNU stow](https://www.gnu.org/software/stow/) to manage th
 
 Run `stow <config file dir>` to create symlinks to the content of that config files directory.
 
-For instance, to create symlinks to the NvChad configuration files, run:
+For instance, to create symlinks to the Neovim configuration files, run:
 
 ```
 $ stow nvim
@@ -16,7 +16,7 @@ $ stow nvim
 
 ## Settings for:
 
-- NvChad config files
+- Neovim >= v0.12 config files
 - Tmux config file
 - Git config files
 - ZSH config file

@@ -79,7 +79,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
-plugins=(git firewalld zsh-syntax-highlighting zsh-autosuggestions git-open)
+plugins=(git firewalld zsh-syntax-highlighting zsh-autosuggestions git-open direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,9 +138,9 @@ export PATH
 export PATH="$PATH:$HOME/.local/bin"
 
 # exa aliases.
-alias ls='exa -l -a --icons --header --git --sort Name'
-alias lr='exa -l --recurse --icons --sort Name'
-alias lt='exa -l --tree --icons --sort Name'
+alias ls='eza -l -a --icons --header --git --sort Name'
+alias lr='eza -l --recurse --icons --sort Name'
+alias lt='eza -l --tree --icons --sort Name'
 
 # Go
 [[ -s "/home/danvergara/.gvm/scripts/gvm" ]] && source "/home/danvergara/.gvm/scripts/gvm"

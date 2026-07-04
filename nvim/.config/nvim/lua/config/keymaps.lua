@@ -206,3 +206,17 @@ map("n", "<leader>rsy", "<cmd> GoTagRm yaml <CR>", { desc = "Remove yaml struct 
 map("n", "<leader>rsd", "<cmd> GoTagRm db <CR>", { desc = "Remove db struct tags" })
 -- Generate if err != nil { via iferr
 map("n", "<leader>er", "<cmd> GoIfErr <CR>", { desc = "Gemerate error if err != nil {" })
+
+-- =====================================================================
+-- DIAGNOSTIC KEYMAPS
+-- =====================================================================
+-- Jump backward (count = -1)
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1 })
+end, { desc = "Previous Diagnostic" })
+-- Jump forward (count = 1)
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1 })
+end, { desc = "Next Diagnostic" })
+-- Press 'gl' (Go to Line) to open a floating window with the full error message
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show Diagnostic Error" })

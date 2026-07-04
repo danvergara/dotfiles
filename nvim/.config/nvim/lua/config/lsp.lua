@@ -12,6 +12,7 @@ require("mason-tool-installer").setup({
 		"gomodifytags",
 		"impl",
 		"iferr",
+		"luacheck",
 	},
 	auto_update = false,
 	run_on_start = true,

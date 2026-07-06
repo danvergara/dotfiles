@@ -4,7 +4,7 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-  animate = { enabled = true },
+	animate = { enabled = true },
 	bigfile = { enabled = true },
 	dashboard = { enabled = false },
 	dim = { enabled = true },
@@ -23,7 +23,7 @@ require("snacks").setup({
 	toggle = { enabled = true },
 	words = { enabled = false },
 	zen = { enabled = true },
-  picker = {
+	picker = {
 		sources = {
 			files = {
 				hidden = true,
@@ -127,7 +127,10 @@ vim.api.nvim_create_autocmd("User", {
 		Snacks.toggle.diagnostics():map("<leader>ud")
 		Snacks.toggle.line_number():map("<leader>ul")
 		Snacks.toggle
-			.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" })
+			.option(
+				"conceallevel",
+				{ off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }
+			)
 			:map("<leader>uc")
 		Snacks.toggle
 			.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" })
@@ -281,4 +284,3 @@ for _, map in ipairs(keymaps) do
 	local mode = map.mode or "n"
 	vim.keymap.set(mode, map[1], map[2], opts)
 end
-

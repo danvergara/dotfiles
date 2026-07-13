@@ -162,9 +162,6 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer" })
 map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer" })
 
--- Close the current buffer
-map("n", "<leader>x", "<Cmd>bdelete<CR>", { silent = true, desc = "Close buffer" })
-
 -- ═══════════════════════════════════════════════════════════
 -- FORMATTING (conform.nvim)
 -- ═══════════════════════════════════════════════════════════
@@ -211,12 +208,12 @@ map("n", "<leader>er", "<cmd> GoIfErr <CR>", { desc = "Gemerate error if err != 
 -- DIAGNOSTIC KEYMAPS
 -- =====================================================================
 -- Jump backward (count = -1)
-vim.keymap.set("n", "[d", function()
+map("n", "[d", function()
 	vim.diagnostic.jump({ count = -1 })
 end, { desc = "Previous Diagnostic" })
 -- Jump forward (count = 1)
-vim.keymap.set("n", "]d", function()
+map("n", "]d", function()
 	vim.diagnostic.jump({ count = 1 })
 end, { desc = "Next Diagnostic" })
 -- Press 'gl' (Go to Line) to open a floating window with the full error message
-vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show Diagnostic Error" })
+map("n", "gl", vim.diagnostic.open_float, { desc = "Show Diagnostic Error" })

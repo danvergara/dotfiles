@@ -40,7 +40,7 @@ vim.lsp.config("gopls", {
 			},
 			staticcheck = true,
 			gofumpt = true,
-			usePlaceholders = true,
+			usePlaceholders = false,
 		},
 	},
 })

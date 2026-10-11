@@ -93,6 +93,15 @@ require("snacks").setup({
 			},
 			grep_buffers = {},
 			explorer = {
+				layout = {
+					layout = {
+						-- Ctrl-w < : Decrease width
+						-- Ctrl-w > : Increase width
+						-- Ctrl-w = : Equalize all windows
+						width = 30,
+						min_width = 30,
+					},
+				},
 				hidden = true,
 				ignored = true,
 				supports_live = true,
@@ -189,7 +198,11 @@ local   keymaps = {
     { "<leader>gP", function() Snacks.picker.git_diff({ base = "origin" }) end, desc = "Git Diff Picker(origin)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
     -- Grep
-    { "<leader>fz", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+    {
+      "<leader>fz",
+      function() Snacks.picker.lines({ layout = "default" }) end,
+      desc = "Buffer Lines"
+    },
     { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
@@ -200,8 +213,8 @@ local   keymaps = {
     { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
-    { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-    { "<leader>sD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+    { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+    { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
     { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
     { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
     { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },

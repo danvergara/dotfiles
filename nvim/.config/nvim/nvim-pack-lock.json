@@ -69,6 +69,10 @@
       "rev": "a219b2c9e5b4765e5c845aba119dad55806fcaf1",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
+    "nvim-lsp-endhints": {
+      "rev": "3224a1c1b2fe1b067049764a154d4d727425fa6d",
+      "src": "https://github.com/chrisgrieser/nvim-lsp-endhints"
+    },
     "nvim-lspconfig": {
       "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
       "src": "https://github.com/neovim/nvim-lspconfig"

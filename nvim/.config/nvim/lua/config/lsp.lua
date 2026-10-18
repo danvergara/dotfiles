@@ -41,6 +41,15 @@ vim.lsp.config("gopls", {
 			staticcheck = true,
 			gofumpt = true,
 			usePlaceholders = false,
+			hints = {
+				assignVariableTypes = true,
+				compositeLiteralFields = true,
+				compositeLiteralTypes = true,
+				constantValues = true,
+				functionTypeParameters = true,
+				parameterNames = true,
+				rangeVariableTypes = true,
+			},
 		},
 	},
 })
@@ -67,5 +76,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>f", function()
 			vim.lsp.buf.format({ async = true })
 		end, "Format buffer")
+
+		local client_id = args.data.client_id
+		local client = vim.lsp.get_client_by_id(client_id)
+		if client and client.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+		end
 	end,
 })

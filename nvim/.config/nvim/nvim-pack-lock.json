@@ -41,6 +41,10 @@
       "rev": "27ba078f14dd39fcd5e8a57d7009cdd77450ebbb",
       "src": "https://github.com/olexsmir/gopher.nvim"
     },
+    "goplements.nvim": {
+      "rev": "1750ace64d42efcbc1ce36eef848a3cea5f88c79",
+      "src": "https://github.com/maxandron/goplements.nvim"
+    },
     "lsp_signature.nvim": {
       "rev": "1997451c4c9956a1380d8bea4b0e33ebdf07976e",
       "src": "https://github.com/ray-x/lsp_signature.nvim"

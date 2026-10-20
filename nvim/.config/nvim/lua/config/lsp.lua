@@ -13,6 +13,7 @@ require("mason-tool-installer").setup({
 		"impl",
 		"iferr",
 		"luacheck",
+		"buf",
 	},
 	auto_update = false,
 	run_on_start = true,

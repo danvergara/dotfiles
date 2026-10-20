@@ -8,6 +8,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		json = { "jq" },
 		yaml = { "yamlfmt" },
+		proto = { "buf" },
 	},
 
 	-- Set up auto-formatting on save

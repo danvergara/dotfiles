@@ -12,6 +12,7 @@ vim.pack.add({
 require("nvim-treesitter").setup({})
 require("nvim-treesitter").install({
 	-- Required by Neovim core
+	"c",
 	"lua",
 	"vim",
 	"vimdoc",
@@ -23,6 +24,7 @@ require("nvim-treesitter").install({
 	"gowork",
 	"python",
 	"zig",
+	"proto",
 	-- Standard data formats
 	"json",
 	"yaml",
